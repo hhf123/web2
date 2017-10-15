@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	var num = 0;  
+        function jsq(num) {
+            
+                document.getElementById('screenName').value += document.getElementById(num).value;    
+        }
+        function eva() {
+            
+            document.getElementById("screenName").value = eval(document.getElementById("screenName").value);
+        }
+        function clearNum() {
+            
+            document.getElementById("screenName").value = null;
+            document.getElementById("screenName").focus();
+        }
+
+
+	</script>
+</head>
+<body>
+
+<table align="center" border="1">
+   <tr>
+     <th colspan="3"> <input type="text" id="screenName"  style="text-align:right"></th>
+     <th><input type="submit" value="C" id="C" onclick="clearNum()"/></th>
+   </tr>
+   <tr>
+     <th><input type="button" value="1" id="1" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="2" id="2" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="3" id="3" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="+" id="+" onclick="jsq(this.id)"/></th>
+   </tr>
+   <tr>
+     <th><input type="button" value="4" id="4" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="5" id="5" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="6" id="6" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="-" id="-" onclick="jsq(this.id)"/></th>
+   </tr>
+   <tr>
+     <th><input type="button" value="7" id="7" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="8" id="8" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="9" id="9" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="*" id="*" onclick="jsq(this.id)"/></th>
+   </tr>
+   <tr>
+     <th><input type="button" value="0" id="0" onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="." id="." onclick="jsq(this.id)"/></th>
+     <th><input type="button" value="=" id="eva" onclick="eva()"/></th>
+     <th><input type="button" value="/" id="/" onclick="jsq(this.id)"/></th>
+   </tr>
+     
+
+</table>
+
+</body>
+</html>
