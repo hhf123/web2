@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reborn</title>
+	<style>
+		#banner{
+			background-image: 
+			background-repeat: no-repeat;
+			width:600px;
+			height:600px;
+			float:left;
+		}
+		#logo{
+            background-image:url(timg.jpg);
+            background-repeat: no-repeat;
+            height:200px;
+            width:534px;
+            float:left;
+		}
+		#logo2{
+			float:left;
+			height:600px;
+			width:533px;
+
+		}
+		#logo1{
+            float:left;
+		}
+		#story{
+              background-image:url(r7.jpg);
+              height:200px;
+              width:534px;
+              font-family: Times;
+              font-weight:bold;
+              color:#708090;
+
+              background-repeat: no-repeat;
+		}
+		.a{
+			color:#4B0082;
+		}
+		
+		#reborn{
+               height:700px;
+               width:1200px;
+	     	   border:5px solid #f8f5ee;
+	     	   float:left;
+	     	   margin:0 auto;
+
+		}
+		#re_bg{
+             float:left;
+              
+		}
+		#text{
+			background-image:url(r6.jpg);
+			background-repeat: no-repeat;
+
+		}
+		#peng{
+			font-family: sans-serif;
+			font-weight:bold;
+			color:#2F4F4F;
+		}
+		#form{
+			width:300px;
+			height:600px;
+			float:left;
+
+		}
+		#comment{
+			width:200px;
+			height:300px;
+			float:left;
+		}
+    #picScroll{
+      white-space: nowrap;
+      overflow:hidden;
+      width:450px;
+      float:left;
+    }
+    #last{
+     
+    }
+
+
+
+	</style>
+	<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	     var con=false;
+	     var arr=['说的不对','说的对','说的太好了','说的很对','知己啊！'];
+	  	$(function(){
+			$("#address").blur(function(){
+				if($(this).val()==""){
+					alert("用户名不能为空");
+				}
+			})	
+			$("#address").focus(function(){
+				$(this).val("");
+			})
+			$("#password1").blur(function(){
+				if($(this).val()==""){
+					alert("密码不能为空");
+				}
+			})	
+			$("#password1").focus(function(){
+				$(this).val("");
+			})
+			$("#password2").blur(function(){
+				if($(this).text()==$("#password1").text()){
+					alert("密码不一致");
+				}
+			})
+	    })
+	    
+        function starPic(which){
+              var d=document.getElementById("comment");
+              var x=d.childNodes;
+              var y=document.getElementById("text");
+              var i=0;             
+               for(i=0;i<=(which.id);i++)
+              {
+              	if(i==0)
+              	{
+              		 y.value=arr[0];
+              		x[i].src="images/star1.png";
+              	}              	
+              	if(i==1)
+              	{
+              		y.value=arr[1];
+              		x[i].src="images/star1.png";
+              	}
+              	if(i==2)
+              	{
+              		 y.value=arr[2];
+              		 x[0].src="images/star2.png";
+              		 x[1].src="images/star2.png";
+              	     x[i].src="images/star2.png";
+              	}
+              	if(i==3)
+              		{
+              		 y.value=arr[3];
+              		 x[0].src="images/star2.png";
+              		 x[1].src="images/star2.png";
+              	     x[i].src="images/star2.png";
+              	}
+              	if(i==4)
+              		{
+              		 y.value=arr[4];
+              		 x[0].src="images/star2.png";
+              		 x[1].src="images/star2.png";
+              	     x[i].src="images/star2.png";
+              	}
+              }
+        }
+        function hide(){
+        	
+               if(con==false)
+               {
+               	var d=document.getElementById("comment");
+                var x=d.childNodes;
+               	var y=document.getElementById("text");
+               	var m=0;
+               	for(m=0;m<=4;m++)
+               	{
+               		 y.value=" ";
+               		 x[m].src="images/star0.png";
+               	}
+               }
+        }
+       function qd(which){
+             con=true;
+             var d=document.getElementById("comment");
+             var x=d.childNodes;
+              var y=document.getElementById("text");
+              var i=0;             
+               for(i=0;i<=(which.id);i++)
+              {
+              	if(i==0)
+              	{
+              		 y.value=arr[0];
+              		x[i].src="images/star1.png";
+              	}              	
+              	if(i==1)
+              	{
+              		y.value=arr[1];
+              		x[i].src="images/star1.png";
+              	}
+              	if(i==2)
+              	{
+              		 y.value=arr[2];
+              		 x[0].src="images/star2.png";
+              		 x[1].src="images/star2.png";
+              	     x[i].src="images/star2.png";
+              	}
+              	if(i==3)
+              		{
+              		 y.value=arr[3];
+              		 x[0].src="images/star2.png";
+              		 x[1].src="images/star2.png";
+              	     x[i].src="images/star2.png";
+              	}
+              	if(i==4)
+              		{
+              		 y.value=arr[4];
+              		 x[0].src="images/star2.png";
+              		 x[1].src="images/star2.png";
+              	     x[i].src="images/star2.png";
+              	}
+              }
+              
+       }
+      function changeToLeft(){
+      document.getElementById("picScroll").scrollLeft++;
+      if(document.getElementById("picScroll").scrollLeft>document.getElementById("picScroll1").offsetWidth)
+    {
+      document.getElementById("picScroll").scrollLeft=0;
+    }
+    } 
+
+    
+      var run = setInterval("changeToLeft()",10);
+    function co(){
+      run=setInterval("changeToLeft()",10);
+    }
+    $(document).ready(function(){
+        $("#head").click(function(){
+            $("#last").fadeOut(3000);
+        });
+        $("#head").dblclick(function(){
+            $("#last").fadeIn(3000);
+        });
+      });
+	</script>
+</head>
+<body>
+     
+    
+    <div id="logo2">
+       <div id="logo"></div>
+       <div id="logo1">
+
+       <p id="story">故事简介：过着颓废生活的中学生阿纲的家里来了一位名叫雷伯恩的家庭教师，他的外表看似婴儿，其实却是赫赫有名的杀手和彭格列家族的专属家庭教师。他的目标是要将阿纲培养成彭格列家族的第十代首领！为了守护同伴，阿纲开始了拼命的特训，并承担起责任一次又一次的战斗着，逐渐成长为了一名优秀的首领！</p>
+       </div>
+       <div id="search">
+                   	      <form method="get">
+
+                   	            
+                   	            <img src="r.jpg" height="50px" width="50px"/>
+                   	            <img src="r.jpg" height="50px" width="50px"/>
+                   	            <input type="text" width="140px" height="19px" background-color=#f8f5ee/>
+                   	            <input type="button"  value="搜索" id="search"/>
+                                <img src="r.jpg" height="50px" width="50px"/>
+                                <img src="r.jpg" height="50px" width="50px"/>                   	            
+                   	      </form>
+       </div>
+       <div id="nav">
+                 <a href="content.html" class="a">日常篇</a>&nbsp;&nbsp;&nbsp;&nbsp;|
+                 <a href="content.html"" class="a">黑曜篇</a>&nbsp;&nbsp;&nbsp;&nbsp;|
+                 <a href="content.html"" class="a">指环篇</a>&nbsp;&nbsp;&nbsp;&nbsp;|
+                 <a href="content.html"" class="a">未来篇</a>&nbsp;&nbsp;&nbsp;&nbsp;|
+                 <a href="list.html" class="a">继承篇</a>&nbsp;&nbsp;&nbsp;&nbsp;|
+                 <a href="list.html" class="a">代理篇</a>&nbsp;&nbsp;&nbsp;&nbsp;|
+                  <a href="list.html" class="a">诅咒篇</a>&nbsp;&nbsp;&nbsp;
+
+
+
+       </div>	
+
+    </div>
+    <div id="form">
+       用户名:<input type="text" id="address" value=""/>   
+       <br/><br/>
+	   密码:<input type="text" id="password1" value=""/>  
+	   <br/><br/>
+	   确认密码:<input type="text" id="password2" value=""/>  
+	   <br/><br/>
+	   <input type="button" value="注册"/>
+	   <br/>
+	   评论一下<br/>
+	 <div  id="comment">  
+      
+     <img src="images/star0.png" onmouseover="starPic(this)" onmouseout="hide()" onclick="qd(this)" id="0"/>
+     <img src="images/star0.png" onmouseover="starPic(this)" onmouseout="hide()" onclick="qd(this)" id="1"/>
+     <img src="images/star0.png" onmouseover="starPic(this)" onmouseout="hide()" onclick="qd(this)" id="2"/>
+     <img src="images/star0.png" onmouseover="starPic(this)" onmouseout="hide()" onclick="qd(this)" id="3"/>
+     <img src="images/star0.png" onmouseover="starPic(this)" onmouseout="hide()" onclick="qd(this)" id="4"/>
+    
+   <br/>
+   <textarea cols="20px" rows="10px" value=" " id="text">
+   	
+   </textarea>
+  </div>
+  </div>
+  <div id="picScroll" onmouseover="clearInterval(run)" onmouseout="co()">
+    <span id="picScroll1">
+      <img src="2.gif" width="450px" height="350px"/>
+      <img src="banner.jpg" width="450px" height="350px"/>
+      <img src="liaoping.jpg" width="450px" height="350px"/>
+      <img src="yusigif.gif" width="450px" height="350px"/>
+      <img src="u4.gif" width="450px" height="350px"/>
+      <img src="lanbo.jpg" width="450px" height="350px"/>
+      
+    </span>
+    <span id="picScroll2" >
+      <img src="2.gif" width="450px" height="350px"/>
+      <img src="banner.jpg" width="450px" height="350px"/>
+      <img src="liaoping.jpg" width="450px" height="350px"/>
+      <img src="yusigif.gif" width="450px" height="350px"/>
+      <img src="u4.gif" width="450px" height="350px"/>
+      <img src="lanbo.jpg" width="450px" height="350px"/>
+    </span>
+    
+  </div> 
+    
+    <div id="reborn">   
+        <div id="re_bg"><img src="ciao.jpg" id="head"></div>
+        <div id="text">
+           <p id="peng">彭格列家族起源于保护居民的自卫团，在意大利西西里岛成立，一个资产、规模和名望皆备的一流黑手党组织，在所处的黑手党联盟中是核心组织。彭格列从创立至今已经拥有十位首领，每个首领在继承前会找自己的家族核心成员——六名守护者，首领和守护者拥有彭格列指环。首领为大空，六名守护者分别为岚、雨、晴、云、雾、雷。彭格列还拥有独立暗杀部队巴利安和门外顾问。</p>
+          <br/>
+          彭格列守护者使命
+          <ul>
+          <li><font color="#D2691E">大空：晴、雷、岚、雨、雾、云，晕染这一切，吸收包容这一切。</font></li>
+          <li><font color="#FFD700">晴：用自己的肉体粉碎袭击家族的逆境，化身为普照大地的太阳。</font></li>
+          <li><font color="#00FF00">雷：不止要成为雷电，还要把家族接受  彭格列指环最初形态 到的损伤单独扛下、抹消，成为避雷针。</font></li>
+          <li><font color="#DC143C">岚：总是成为攻击的核心，无休止的怒涛的岚。</font></li>
+          <li><font color="#87CEEB">雨：细数着战斗历程，冲洗着流淌的鲜血，宛如镇魂歌般的雨。</font></li>
+          <li><font color="#808080">雾：无中生有，有中生无，以此迷惑敌人，使之无法抓住家族成员的实体，虚幻的幻影。</font></li>
+          <li><font color="#8B008B">云：成为不受任何束缚，独自守护家族的孤高的浮云。</font></li>
+          </ul>
+          <img src="r4.jpg" height="280px" width="550px"/>
+
+        </div>
+
+    </div>
+    <br/>
+    
+    &nbsp; &nbsp;<p> &nbsp; &nbsp; &nbsp;<div align="center" id="last"><img src="27.png" align="center" id="pc1"></div>
+    <br/>
+    
+    
+    
+            
+    
+    
+</body>
+</html>
